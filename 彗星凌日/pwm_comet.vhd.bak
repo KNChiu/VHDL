@@ -1,0 +1,48 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+---------------------------------------
+entity pwm_comet is
+	port(		CK	:in	std_logic;
+--				B	:in   std_logic_vector(1 downto 0);
+				L	:buffer std_logic_vector(5 downto 0));
+				
+	end;
+--------------------------------------
+architecture ARCH of pwm_comet is
+signal	CK1:std_logic;
+signal	CK2:std_logic;
+signal	C:std_logic;
+signal	T:std_logic_vector(5 downto 0);
+signal	TT:std_logic_vector(5 downto 0);
+signal	S:std_logic_vector(2 downto 0);
+signal	A:std_logic_vector(21 downto 0);
+begin
+process(CK)
+begin
+
+
+
+if rising_edge(CK) then	
+			--S<=B;
+			A<=A+1;
+end if;
+			CK1<=A(8);
+			CK2<=A(18);
+	if rising_edge(CK2) then
+		L<=L(0) & L(5 downto 1);
+	end if;
+	
+	if rising_edge(CK1) then
+				
+
+	 T<=T+1; if T="000000" then L(2)<='1'; else if T="010000" then L(2)<='0'; end if; end if;
+	 TT<=TT+1; if TT="000000" then L(1)<='1'; else if TT="001000" then L(1)<='0'; end if; end if;
+	 L(0)<='0';
+			
+		
+	end if;	
+
+	
+end process;
+end ARCH;
