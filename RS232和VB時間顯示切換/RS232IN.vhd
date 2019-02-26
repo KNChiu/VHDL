@@ -1,0 +1,111 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+---------------------------------------
+entity RS232IN is
+	port(		CK	:in	std_logic;
+				RSIN:std_logic;
+				FALE:buffer std_logic;
+				REST:in std_logic;
+				
+				SEGOUT:buffer std_logic_vector(6 downto 0);
+				CH	:buffer std_logic_vector(3 downto 0)
+	);
+				
+	end;
+--------------------------------------
+architecture ARCH of  RS232IN is
+signal	RSS:integer range 0 to 4;
+signal	RST:integer range 0 to 20832;
+
+type ram_reg_in is array(3 downto 0) of std_logic_vector(6 downto 0);
+signal RSINDATA:ram_reg_in; 
+signal	j:integer range 0 to 3;
+signal	i:integer range 0 to 6;
+
+signal	CK1:std_logic;
+signal	CLK:std_logic_vector(18 downto 0);
+signal	SEGS	:integer range 0 to 3;
+signal	SEG :std_logic_vector(3 downto 0);
+
+begin
+process(CK)
+begin
+
+if REST='0' then  RSS<=0; RST<=0; i<=0; j<=0; SEGS<=0; SEG<="0000"; 
+	else if rising_edge(ck) then
+		CLK<=CLK+1;
+		
+		CK1<=CLK(16);
+		
+		case RSS is
+			when 0 => if RSIN = '0' then RSS<=1; RST<=10416; end if;
+			when 1 => if RST= 0 
+						then 
+							if RSIN='0' 
+								then RSS<=2; RST<=20832; i<=0; 
+								else RSS<=0; 
+							end if;
+						else RST<=RST-1;
+					  end if;
+			when 2 => if RST =0 
+						then RST<=20832;
+							if i>6 
+								then i<=0; RSS<=3; 
+									if j>3 
+										then j<=0;
+										else j<=j+1;
+									end if;
+								else i<=i+1; RSINDATA(j)(i)<=RSIN;
+							end if;
+						else  RST<=RST-1;
+					  end if;
+			when 3 => if RSIN = '1' 
+						then RSS<=4;
+						else FALE<='0';
+					  end if;
+			when 4 => if RST=0
+						then RSS<=0;
+						else RST<=RST-1;
+					 end if;
+		end case;
+	end if;
+--------------------------------------7seg+bcd---------------------------------------------------
+
+	if rising_edge(CK1)	then
+		case SEGS is
+			when 0 =>SEG<=RSINDATA(0)(3 downto 0); CH<="1110"; SEGS<=1;
+			when 1 =>SEG<=RSINDATA(1)(3 downto 0); CH<="1101"; SEGS<=2;
+			when 2 =>SEG<=RSINDATA(2)(3 downto 0); CH<="1011"; SEGS<=3;
+			when 3 =>SEG<=RSINDATA(3)(3 downto 0); CH<="0111"; SEGS<=0;
+		end case;
+	end if;		
+	
+	case SEG is
+		when "0000" =>SEGOUT<="0000001";--0
+		when "0001" =>SEGOUT<="1001111";--1
+		when "0010" =>SEGOUT<="0010010";--2
+		when "0011" =>SEGOUT<="0000110";--3
+		when "0100" =>SEGOUT<="1001100";--4
+		when "0101" =>SEGOUT<="0100100";--5
+		when "0110" =>SEGOUT<="0100000";--6
+		when "0111" =>SEGOUT<="0001101";--7
+		when "1000" =>SEGOUT<="0000000";--8
+		when "1001" =>SEGOUT<="0001100";--9
+		when "1010" =>SEGOUT<="0001000";--A	  
+	    when "1011" =>SEGOUT<="1100000";--B
+	    when "1100" =>SEGOUT<="0110001";--C
+	    when "1101" =>SEGOUT<="1000010";--D
+	    when "1110" =>SEGOUT<="0110000";--E
+		when "1111" =>SEGOUT<="0111000";--F
+		when others =>SEGOUT<=null;	
+	end case;	
+	
+end if;--REST					  
+end process;
+end	ARCH;
+
+
+
+
+

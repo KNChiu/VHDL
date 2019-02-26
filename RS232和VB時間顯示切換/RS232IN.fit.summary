@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Jun 22 16:15:07 2016
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : RS232IN
+Top-level Entity Name : RS232IN
+Family : Cyclone III
+Device : EP3C10E144C8
+Timing Models : Final
+Total logic elements : 120 / 10,320 ( 1 % )
+    Total combinational functions : 119 / 10,320 ( 1 % )
+    Dedicated logic registers : 67 / 10,320 ( < 1 % )
+Total registers : 67
+Total pins : 15 / 95 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
