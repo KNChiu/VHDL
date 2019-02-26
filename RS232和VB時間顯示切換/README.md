@@ -1,4 +1,4 @@
-
+Using Cyclone III EP3C16Q240C8
 
 CH[3]	Output	PIN_64
 CH[2]	Output	PIN_60
