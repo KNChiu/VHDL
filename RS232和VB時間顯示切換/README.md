@@ -1,0 +1,24 @@
+
+
+CH[3]	Output	PIN_64
+CH[2]	Output	PIN_60
+CH[1]	Output	PIN_59
+CH[0]	Output	PIN_58
+CK	Input	PIN_91
+FALE	Output	PIN_135
+REST	Input	PIN_87
+RSIN	Input	PIN_133
+SEGOUT[6]	Output	PIN_55
+SEGOUT[5]	Output	PIN_54
+SEGOUT[4]	Output	PIN_53
+SEGOUT[3]	Output	PIN_52
+SEGOUT[2]	Output	PIN_51
+SEGOUT[1]	Output	PIN_50
+SEGOUT[0]	Output	PIN_49
+RSLED[6]	Unknown	PIN_144
+RSLED[5]	Unknown	PIN_143
+RSLED[4]	Unknown	PIN_142
+RSLED[3]	Unknown	PIN_141
+RSLED[2]	Unknown	PIN_138
+RSLED[1]	Unknown	PIN_137
+RSLED[0]	Unknown	PIN_136
