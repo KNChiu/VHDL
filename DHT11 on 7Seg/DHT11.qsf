@@ -1,0 +1,88 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+# Date created = 13:41:05  August 14, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		DHT11_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY DHT11
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:41:05  AUGUST 14, 2016"
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name VHDL_FILE DHT11.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_149 -to CK
+set_location_assignment PIN_70 -to DHTL
+set_location_assignment PIN_145 -to RESET
+set_global_assignment -name MISC_FILE "D:/105年選手日誌/技藝競賽第一題/DHT11/DHT11.dpf"
+set_location_assignment PIN_142 -to LED1[7]
+set_location_assignment PIN_139 -to LED1[6]
+set_location_assignment PIN_137 -to LED1[5]
+set_location_assignment PIN_135 -to LED1[4]
+set_location_assignment PIN_134 -to LED1[3]
+set_location_assignment PIN_133 -to LED1[2]
+set_location_assignment PIN_132 -to LED1[1]
+set_location_assignment PIN_131 -to LED1[0]
+set_location_assignment PIN_106 -to LED2[7]
+set_location_assignment PIN_108 -to LED2[6]
+set_location_assignment PIN_110 -to LED2[5]
+set_location_assignment PIN_112 -to LED2[4]
+set_location_assignment PIN_114 -to LED2[3]
+set_location_assignment PIN_118 -to LED2[2]
+set_location_assignment PIN_120 -to LED2[1]
+set_location_assignment PIN_127 -to LED2[0]
+set_location_assignment PIN_199 -to CH[3]
+set_location_assignment PIN_197 -to CH[2]
+set_location_assignment PIN_195 -to CH[1]
+set_location_assignment PIN_189 -to CH[0]
+set_location_assignment PIN_226 -to SEGOUT[7]
+set_location_assignment PIN_223 -to SEGOUT[6]
+set_location_assignment PIN_221 -to SEGOUT[5]
+set_location_assignment PIN_219 -to SEGOUT[4]
+set_location_assignment PIN_217 -to SEGOUT[3]
+set_location_assignment PIN_214 -to SEGOUT[2]
+set_location_assignment PIN_203 -to SEGOUT[1]
+set_location_assignment PIN_201 -to SEGOUT[0]
+set_global_assignment -name MISC_FILE "D:/105年選手日誌/技藝競賽第一題/DHT11 七段顯示/DHT11.dpf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
