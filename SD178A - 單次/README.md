@@ -1,0 +1,8 @@
+
+
+CK	Input	PIN_149
+LED	Output	PIN_133
+RDY	Input	PIN_201
+RESET	Input	PIN_145
+SCLK	Output	PIN_199
+SDI	Output	PIN_197
