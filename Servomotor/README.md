@@ -1,1 +1,5 @@
+Using Cyclone III EP3C16Q240C8
+
+CK	Input	PIN_149
+SERVOOUT	Output	PIN_167
 
