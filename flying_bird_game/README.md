@@ -1,2 +1,31 @@
 flying bird game on 8X8 led
 
+Using Cyclone III EP3C16Q240C8
+
+CH8X8[7]	Output	PIN_230
+CH8X8[6]	Output	PIN_224
+CH8X8[5]	Output	PIN_222
+CH8X8[4]	Output	PIN_220
+CH8X8[3]	Output	PIN_218
+CH8X8[2]	Output	PIN_216
+CH8X8[1]	Output	PIN_207
+CH8X8[0]	Output	PIN_202
+CK	Input	PIN_149
+FLY_UP	Input	PIN_145
+RESET	Input	
+SEGG[7]	Output	PIN_226
+SEGG[6]	Output	PIN_223
+SEGG[5]	Output	PIN_221
+SEGG[4]	Output	PIN_219
+SEGG[3]	Output	PIN_217
+SEGG[2]	Output	PIN_214
+SEGG[1]	Output	PIN_203
+SEGG[0]	Output	PIN_201
+SEGR[7]	Output	PIN_199
+SEGR[6]	Output	PIN_197
+SEGR[5]	Output	PIN_195
+SEGR[4]	Output	PIN_189
+SEGR[3]	Output	PIN_187
+SEGR[2]	Output	PIN_185
+SEGR[1]	Output	PIN_183
+SEGR[0]	Output	PIN_181
